@@ -21,7 +21,7 @@ const FIREBASE_CONFIG = {
 // ║  PASTE YOUR UID HERE after first login       ║
 // ║  Firebase Console → Auth → Users → your UID ║
 // ╚══════════════════════════════════════════════╝
-const ADMIN_UIDS = ["PASTE_YOUR_UID_HERE"];
+const ADMIN_UIDS = ["qtqDb9TaPCN3jjDKspnz2htLudm1"];
 
 // ─── SPAM PROTECTION LIMITS ───────────────────────
 const SPAM = {
