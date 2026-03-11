@@ -23,7 +23,7 @@ const FIREBASE_CONFIG = {
 // ║  Dashboard → Settings → Upload Presets       ║
 // ╚══════════════════════════════════════════════╝
 const CLOUDINARY = {
-  cloudName:   'YOUR_CLOUD_NAME',      // e.g. 'dxyz123abc'
+  cloudName:   'dz0ozqboj',      // e.g. 'dxyz123abc'
   uploadPreset: 'YOUR_UPLOAD_PRESET',  // unsigned upload preset name
   avatarFolder: 'qchelp/avatars',
   postFolder:   'qchelp/posts',
