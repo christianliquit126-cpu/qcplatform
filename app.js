@@ -725,13 +725,13 @@ async function confirmDelete(){
 async function uploadToCloudinary(blob, folder, onProgress){
   const formData = new FormData();
   formData.append('file', blob);
-  formData.append('upload_preset', CLOUDINARY.uploadPreset);
+  formData.append('upload_preset', 'qcplatform');
   formData.append('folder', folder);
 
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
-    const url = `https://api.cloudinary.com/v1_1/${CLOUDINARY.cloudName}/image/upload`;
-
+    const url = `https://api.cloudinary.com/v1_1/YOUR_CLOUD_NAME/image/upload`;
+  
     xhr.open('POST', url, true);
 
     // Progress tracking (works on all mobile browsers)
