@@ -24,9 +24,9 @@ const FIREBASE_CONFIG = {
 // ╚══════════════════════════════════════════════╝
 const CLOUDINARY = {
   cloudName:   'dz0ozqboj',      // e.g. 'dxyz123abc'
-  uploadPreset: 'YOUR_UPLOAD_PRESET',  // unsigned upload preset name
-  avatarFolder: 'qchelp/avatars',
-  postFolder:   'qchelp/posts',
+  uploadPreset: 'qcplatform_uploads',  // unsigned upload preset name
+  avatarFolder: 'qcplatform/avatars',
+  postFolder:   'qcplatform/posts',
 };
 
 // ╔══════════════════════════════════════════════╗
