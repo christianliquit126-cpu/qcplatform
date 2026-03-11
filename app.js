@@ -730,7 +730,7 @@ async function uploadToCloudinary(blob, folder, onProgress){
 
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
-    const url = `https://api.cloudinary.com/v1_1/YOUR_CLOUD_NAME/image/upload`;
+    const url = `https://api.cloudinary.com/v1_1/qcplatform/image/upload`;
   
     xhr.open('POST', url, true);
 
