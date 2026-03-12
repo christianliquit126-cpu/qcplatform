@@ -725,12 +725,12 @@ async function confirmDelete(){
 async function uploadToCloudinary(blob, folder, onProgress){
   const formData = new FormData();
   formData.append('file', blob);
-  formData.append('upload_preset', 'qcplatform_uploads');
+  formData.append('upload_preset', CLOUDINARY.uploadPreset);
   formData.append('folder', folder);
 
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
-    const url = `https://api.cloudinary.com/v1_1/dz0ozqboj/image/upload`;
+    const url = `https://api.cloudinary.com/v1_1/${CLOUDINARY.cloudName}/image/upload`;
   
     xhr.open('POST', url, true);
 
