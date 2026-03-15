@@ -10,7 +10,7 @@
   --glight:#52B788;
   --gsoft:#B7E4C7;
   --gpale:#F0FAF2;
-  --bg:#F4F6F9;
+  --bg:#F8FAFC;
   --white:#FFFFFF;
   --text:#111827;
   --muted:#6B7280;
@@ -21,11 +21,11 @@
   --blue:#2563EB;
   --purple:#7C3AED;
   --teal:#0D9488;
-  --r:16px;
+  --r:24px;
   --rsm:12px;
-  --sh0:0 1px 4px rgba(0,0,0,.07);
-  --sh1:0 4px 16px rgba(0,0,0,.10);
-  --sh2:0 8px 32px rgba(0,0,0,.14);
+  --sh0: 0 1px 3px rgba(0,0,0,0.1);
+  --sh1: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+  --sh2: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
   --nh:58px;
   --bnh:72px;
   --disp:'Fraunces',serif;
@@ -233,64 +233,112 @@ canvas#authCanvas{position:absolute;inset:0;width:100%;height:100%}
 .w35{width:35%}.w45{width:45%}.w60{width:60%}.w70{width:70%}.w75{width:75%}.w80{width:80%}.w85{width:85%}
 @keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
 
-/* ── POST CARD ── */
-.pcard{background:#fff;border-radius:var(--r);margin:0 11px 11px;box-shadow:var(--sh0);overflow:hidden;border:1px solid var(--border);transition:transform .15s,box-shadow .15s}
-.pcard:active{transform:scale(.99)}
-.pcard-top{height:4px}
-.ta-help{background:linear-gradient(90deg,#dc2626,#ef4444)}
-.ta-flood{background:linear-gradient(90deg,#2563eb,#60a5fa)}
-.ta-med{background:linear-gradient(90deg,#16a34a,#4ade80)}
-.ta-miss{background:linear-gradient(90deg,#9333ea,#c084fc)}
-.ta-pow{background:linear-gradient(90deg,#d97706,#fbbf24)}
-.ta-traf{background:linear-gradient(90deg,#64748b,#94a3b8)}
-.ta-lost{background:linear-gradient(90deg,#ea580c,#fb923c)}
-.ta-found{background:linear-gradient(90deg,#0891b2,#22d3ee)}
-.ta-gen{background:linear-gradient(90deg,var(--gmid),var(--glight))}
-.phead{display:flex;gap:10px;padding:13px 13px 0}
-.pav{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:700;color:#fff;flex-shrink:0;cursor:pointer;overflow:hidden}
-.pav img{width:100%;height:100%;object-fit:cover}
-.pmeta{flex:1;min-width:0}
-.pauth-row{display:flex;align-items:center;gap:5px;flex-wrap:wrap;margin-bottom:4px}
-.pauth{font-size:.88rem;font-weight:700;cursor:pointer;color:var(--text)}
-.pauth:hover{color:var(--green)}
-.ptime{font-size:.7rem;color:var(--soft);margin-left:auto;white-space:nowrap}
-.psub{display:flex;align-items:center;gap:4px;flex-wrap:wrap}
-.ptchip{padding:2px 8px;border-radius:99px;font-size:.64rem;font-weight:700}
-.tc-gen{background:#d1fae5;color:#065f46}
-.tc-help{background:#fee2e2;color:#991b1b}
-.tc-flood{background:#dbeafe;color:#1e40af}
-.tc-med{background:#d1fae5;color:#065f46}
-.tc-miss{background:#ede9fe;color:#4c1d95}
-.tc-pow{background:#fef3c7;color:#92400e}
-.tc-traf{background:#f1f5f9;color:#475569}
-.tc-lost{background:#fff7ed;color:#9a3412}
-.tc-found{background:#ecfeff;color:#0e7490}
-.ploc{font-size:.65rem;color:var(--muted);display:flex;align-items:center;gap:2px}
-.status-badge{padding:2px 7px;border-radius:99px;font-size:.62rem;font-weight:700}
-.sb-pending{background:#fef3c7;color:#92400e}
-.sb-inprogress{background:#dbeafe;color:#1e40af}
-.sb-resolved{background:#d1fae5;color:#065f46}
-.vol-badge{display:inline-flex;align-items:center;gap:3px;padding:2px 7px;border-radius:99px;font-size:.64rem;font-weight:700;background:#d1fae5;color:#065f46;margin-top:3px}
-.pbody{padding:11px 13px 10px;font-size:.9rem;line-height:1.55;color:var(--text);white-space:pre-wrap;word-break:break-word}
-.pimg{width:100%;max-height:260px;object-fit:cover;border-radius:10px;margin-top:8px;cursor:pointer;transition:opacity .2s}
-.pimg:hover{opacity:.92}
-.pdiv{height:1px;background:var(--border);margin:0 13px}
-.pacts{display:flex;align-items:center;padding:4px 6px;gap:0}
-.pa{flex:1;display:flex;align-items:center;justify-content:center;gap:4px;padding:9px 4px;font-size:.8rem;color:var(--muted);border-radius:8px;transition:.15s;min-height:44px}
-.pa:hover{background:var(--bg);color:var(--green)}
-.pa i{font-size:.9rem}
-.pa.liked{color:var(--red)}
-.pa.bookmarked{color:var(--orange)}
-.pa.del{color:var(--red)}
-.badge{padding:2px 7px;border-radius:99px;font-size:.63rem;font-weight:700}
-.badge-admin{background:#fef2f2;color:var(--red)}
-.badge-verified{background:#ecfdf5;color:#065f46}
-.badge-volunteer{background:#eff6ff;color:#1e40af}
-.badge-official{background:#faf5ff;color:#6d28d9}
-.badge-responder{background:#fff1f2;color:#be123c}
-.badge-moderator{background:#fafaf9;color:#57534e}
-.badge-row{display:flex;flex-wrap:wrap;gap:4px;align-items:center}
-.role-chip{padding:2px 8px;border-radius:99px;font-size:.67rem;font-weight:600;background:var(--bg);color:var(--muted);border:1px solid var(--border)}
+/* ── POST CARD PRO VERSION ── */
+.pcard {
+  background: var(--white);
+  border-radius: var(--r); /* Gagamit nung 24px na pinalitan natin kanina */
+  margin: 0 15px 18px; /* Mas malapad na margin para huminga ang layout */
+  box-shadow: var(--sh1); /* Mas malambot na shadow */
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.03); /* Halos hindi kita na border para malinis */
+  transition: all .2s ease;
+}
+
+/* Pag ni-click, lulubog nang konti - Tactile feel */
+.pcard:active {
+  transform: scale(0.98);
+  box-shadow: var(--sh0);
+}
+
+/* Gradient bar sa taas - Ginawa nating mas makapal (6px) para mas premium */
+.pcard-top { height: 6px; }
+
+/* ── POST HEADER ── */
+.phead {
+  display: flex;
+  gap: 12px;
+  padding: 16px 16px 8px;
+}
+
+.pav {
+  width: 44px; /* Mas malaki nang konti */
+  height: 44px;
+  border-radius: 14px; /* Squircle look (iOS style) imbes na bilog lang */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.pauth {
+  font-size: 0.95rem; /* Mas malaki para madaling basahin */
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.3px;
+}
+
+.ptime {
+  font-size: 0.75rem;
+  color: var(--soft);
+  font-weight: 500;
+}
+
+/* ── TAGS & CHIPS ── */
+.ptchip {
+  padding: 4px 10px; /* Mas mataba na padding */
+  border-radius: 8px; /* Rounded rectangle look */
+  font-size: 0.68rem;
+  text-transform: uppercase; /* All caps para mukhang official badge */
+  letter-spacing: 0.5px;
+}
+
+/* ── POST BODY ── */
+.pbody {
+  padding: 8px 16px 16px;
+  font-size: 0.95rem; /* Standard mobile reading size */
+  line-height: 1.6;
+  color: #334155; /* Slate color - hindi masakit sa mata */
+}
+
+.pimg {
+  width: calc(100% - 24px); /* May gap sa gilid para hindi dikit */
+  margin: 0 12px 12px;
+  max-height: 300px;
+  border-radius: 16px; /* Bagay sa rounded theme natin */
+  box-shadow: var(--sh0);
+}
+
+/* ── ACTION BUTTONS (Like, Comment, etc) ── */
+.pacts {
+  display: flex;
+  padding: 8px 12px;
+  background: var(--gpale); /* Light green tint sa background ng buttons */
+  border-top: 1px solid var(--border);
+}
+
+.pa {
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+  border-radius: 12px;
+}
+
+.pa:hover {
+  background: rgba(0,0,0,0.05);
+  color: var(--green);
+}
+
+/* Special color pag naka-like */
+.pa.liked {
+  color: #ef4444;
+  background: #fef2f2;
+}
+
+/* ── BADGES (Admin, Verified) ── */
+.badge {
+  padding: 3px 9px;
+  border-radius: 6px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
 
 /* ── URGENCY ── */
 .urg-badge{display:inline-flex;align-items:center;gap:3px;padding:2px 8px;border-radius:99px;font-size:.64rem;font-weight:800}
